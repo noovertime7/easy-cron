@@ -1,0 +1,5 @@
+{"level":"\u001b[34mINFO\u001b[0m","time":"2022-12-12T09:22:07.372-0500","caller":"logger/zap.go:35","msg":"init logger success"}
+{"level":"\u001b[34mINFO\u001b[0m","time":"2022-12-12T09:22:07.372-0500","caller":"logger/interface.go:23","msg":"注册shell命令 Name:test1 执行周期:* * * * * Shell:echo -e 'test\ntest2'"}
+{"level":"\u001b[34mINFO\u001b[0m","time":"2022-12-12T09:22:07.372-0500","caller":"logger/interface.go:23","msg":"任务注册成功 任务ID 1\n"}
+{"level":"\u001b[34mINFO\u001b[0m","time":"2022-12-12T09:22:07.372-0500","caller":"logger/interface.go:23","msg":"注册shell命令 Name:test2 执行周期:* * * * * Shell:echo 'videoapp-es-channel'"}
+{"level":"\u001b[34mINFO\u001b[0m","time":"2022-12-12T09:22:07.372-0500","caller":"logger/interface.go:23","msg":"任务注册成功 任务ID 1\n"}
