@@ -1,0 +1,7 @@
+cron:
+  - name: "videoapp-es-channel-all"
+    cron: "* * * * *"
+    shell: "echo -e 'test\ntest2'"
+  - name: "videoapp-es-channel"
+    cron: "* * * * *"
+    shell: "echo 'videoapp-es-channel'"
