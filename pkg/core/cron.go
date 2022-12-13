@@ -11,8 +11,6 @@ import (
 	"github.com/robfig/cron/v3"
 )
 
-var CronJob = make(map[string]*cron.Cron)
-
 type cronHandler struct {
 	Name      string
 	CronCycle string
@@ -27,7 +25,6 @@ func NewCronHandler(name, cronCycle, shell string) *cronHandler {
 		Shell:     shell,
 	}
 	cr := cron.New()
-	CronJob[name] = cr
 	h.Cron = cr
 	logger.LG.Info(fmt.Sprintf("注册shell命令 Name:%v 执行周期:%v Shell:%v", h.Name, h.CronCycle, h.Shell))
 	return h
@@ -46,7 +43,7 @@ func (cr *cronHandler) Start() error {
 
 func (cr *cronHandler) StartCommand() error {
 	logger.LG.Info(fmt.Sprintf("%s 执行 %s", cr.Name, cr.Shell))
-	c := exec.Command("bash", cr.Shell) // mac or linux
+	c := exec.Command("bash", "-c", cr.Shell) // mac or linux
 	stdout, err := c.StdoutPipe()
 	if err != nil {
 		return err
